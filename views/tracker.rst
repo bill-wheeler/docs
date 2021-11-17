@@ -10,7 +10,25 @@ The "tracker" is shown when you press down the left mouse button over some data 
 Format string
 =============
 
-The easiest way to modify the information shown in the tracker, is to modify the `TrackerFormatString` of the series.
+The easiest way to modify the information shown in the tracker, is to modify the `TrackerFormatString` of the series. The string contains text plus the ability to insert values from the series. Formatting values within the string follows C# standard using curly braces ({}) for variable values.  The NewLine (\n) can be used to create multiline tracker displays.  The default variables are:
+
+* {0} the title of the series
+* {1} the title of the x-axis
+* {2} the x-value
+* {3} the title of the y-axis
+* {4} the y-value
+
+For scatter plots there are additional fields:
+
+* {5} the title of the value-axis
+* {6} the value of the scatter point
+
+The default is "{0}\n{1}: {2}\n{3}: {4}"
+
+Examples: 
+* "X={2}\nY={4}"
+* "({2}, {4})"
+* "Time: {2:HH:mm:ss}\nAltitude: {4} ft"
 
 The arguments are specific to each class.
 
